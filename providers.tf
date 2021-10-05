@@ -56,7 +56,9 @@ data "equinix_network_device_platform" "customer-csr-api1" {
 
 
 # AWS Data Source Lookup
-
 data "aws_dx_connection" "awsdx" {
   name = local.equinixid_aws
+  depends_on = [
+    equinix_network_bgp.customer-csr-api1
+  ]
 }

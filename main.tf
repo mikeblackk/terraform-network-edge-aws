@@ -54,6 +54,9 @@ resource "aws_dx_private_virtual_interface" "eqx-dx-privatevif" {
   amazon_address   = "${var.ne_remote_ip}/30"
   customer_address = var.ne_local_ip
   bgp_auth_key     = var.bgpauthkey
+  depends_on = [
+    equinix_network_bgp.customer-csr-api1
+  ]
 }
 
 resource "aws_dx_gateway" "equinix-dx-gateway" {
