@@ -11,15 +11,13 @@ All changes to variables can be done in the **variables.tf**
 The code has been built to accept variables for the relevant components to configure the device, virtual circuit
 and BGP session.
 
-Please review the variables.tf file and created a terraform.tfvar file to input the required
-variables. Which contains links to documentation to assist.
+Please review the variables.tf file and create a terraform.tfvar file to input the required variables and which contains links to documentation to assist.
 
 Key components required are:
 - Device details such as hostname,
 size, term length, license type and throughput
 - Equinix Fabric vc size
 - BGP details such as peering details (BGP) and networking information
-
 - AWS details such as account id, access key id and secret key id ** please note best practice is to never embedded aws details into terraform files but use a reference to the local ~/.aws shared files but for the automation we will use the embedded method.
 
 
